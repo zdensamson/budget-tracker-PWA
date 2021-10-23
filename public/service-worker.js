@@ -68,8 +68,7 @@ self.addEventListener('install', function (e) {
                 });
             })
             .catch(err => console.log(err))
-        );
-    
+        );    
         return;
       }
       e.respondWith(
