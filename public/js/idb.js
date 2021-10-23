@@ -67,7 +67,7 @@ function uploadBudgetLine() {
               }
     
               const transaction = db.transaction(['new_budgetLine'], 'readwrite');
-              const pizzaObjectStore = transaction.objectStore('new_budgetLine');
+              const budgetObjectStore = transaction.objectStore('new_budgetLine');
               // clear all items in your store
               budgetObjectStore.clear();
             })

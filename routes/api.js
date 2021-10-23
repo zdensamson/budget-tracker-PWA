@@ -31,4 +31,25 @@ router.get("/api/transaction", (req, res) => {
     });
 });
 
+router.get("/api/transaction", ({body}, res) => {
+  Transaction.find({})
+    .then(dbTransaction => {
+      res.json(dbTransaction);
+    })
+    .catch(err => {
+      res.status(404).json(err);
+    });
+});
+
+router.delete("/api/transaction", (req, res) => {
+  Transaction.deleteMany({})
+    .then(dbTransaction => {
+      res.json(dbTransaction);
+    })
+    .catch(err => {
+      res.status(404).json(err);
+    });
+});
+
+
 module.exports = router;
