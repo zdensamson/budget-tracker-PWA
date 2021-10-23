@@ -21,8 +21,6 @@ const FILES_TO_CACHE = [
 ];
 
 // Install the service worker
-// YOUR CODE HERE
-//
 self.addEventListener('install', function (e) {
     e.waitUntil(
       caches.open(CACHE_NAME).then(function (cache) {
@@ -31,12 +29,9 @@ self.addEventListener('install', function (e) {
       })
     )
     self.skipWaiting();
-  })
+  });
   
-  
-  
-  
-  // Activate the service worker and remove old data from the cache
+// Activate the service worker and remove old data from the cache
   self.addEventListener('activate', function(e) {
     e.waitUntil(
       caches.keys().then(function(keyList) {
@@ -53,7 +48,7 @@ self.addEventListener('install', function (e) {
     self.clients.claim();
   });
   
-  // Intercept fetch requests
+// Intercept fetch requests
   self.addEventListener('fetch', function(e) {
     if (e.request.url.includes('/api/')) {
         e.respondWith(
