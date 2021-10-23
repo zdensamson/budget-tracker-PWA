@@ -48,7 +48,7 @@ function uploadBudgetLine() {
     // get all records from store and set to a variable
     const getAll = budgetObjectStore.getAll();
 
-    // more to come...
+    
     getAll.onsuccess = function() {
         // if there was data in indexedDb's store, let's send it to the api server
         if (getAll.result.length > 0) {
